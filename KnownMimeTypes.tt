@@ -1,10 +1,9 @@
 <#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="System.Core" #>
+<#@ assembly name="System.Net.Http" #>
 <#@ assembly name="Newtonsoft.Json" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.IO" #>
-<#@ import namespace="System.Net" #>
+<#@ import namespace="System.Net.Http" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Text.RegularExpressions" #>
@@ -26,7 +25,7 @@ namespace MimeMapping
     {
 
 <#
-        Regex rgx = new Regex("[^a-zA-Z0-9]");
+		    Regex rgx = new Regex("[^a-zA-Z0-9]");
 
         string GetMimeFieldName(string mimeKey)
         {
@@ -36,10 +35,9 @@ namespace MimeMapping
 
         string GetPageContent(string url)
         {
-            using (var responseStream = WebRequest.CreateHttp(url).GetResponse().GetResponseStream())
-            using (var streamReader = new StreamReader(responseStream, Encoding.UTF8))
+            using (var client = new HttpClient())
             {
-                return streamReader.ReadToEnd();				
+                return client.GetStringAsync(url).GetAwaiter().GetResult();			
             }
         }
 

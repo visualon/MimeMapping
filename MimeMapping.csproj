@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.1;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net472</TargetFrameworks>
     <Description>Constants for (almost) all MIME types and method to determine MIME type from a file name.
 Contains just over 1000 mime types.
 
@@ -30,7 +30,7 @@ https://learn.microsoft.com/dotnet/api/system.web.mimemapping.getmimemapping
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.1\MimeMapping.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard2.0\MimeMapping.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

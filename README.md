@@ -1,6 +1,6 @@
 # MimeMapping
 
-[![Nuget](https://img.shields.io/nuget/v/MimeMapping)](https://www.nuget.org/packages/MimeMapping/) [![Nuget](https://img.shields.io/nuget/dt/MimeMapping)](https://www.nuget.org/packages/MimeMapping/)
+[![Nuget](https://img.shields.io/nuget/v/VisualOn.MimeMapping)](https://www.nuget.org/packages/VisualOn.MimeMapping/) [![Nuget](https://img.shields.io/nuget/dt/VisualOn.MimeMapping)](https://www.nuget.org/packages/VisualOn.MimeMapping/)
 
 Constants for (almost) all MIME types and method to determine MIME type from a file name.
 Contains just over 1000 mime types.
